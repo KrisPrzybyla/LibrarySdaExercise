@@ -1,3 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <html>
 <head>
     <meta charset="utf-8">
@@ -15,11 +18,11 @@
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-    <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-    <link rel="manifest" href="/docs/4.5/assets/img/favicons/manifest.json">
+<%--    <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">--%>
+<%--    <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">--%>
+<%--    <link rel="manifest" href="/docs/4.5/assets/img/favicons/manifest.json">--%>
     <link rel="mask-icon" href="/docs/4.5/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
-    <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon.ico">
+<%--    <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon.ico">--%>
     <meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
     <meta name="theme-color" content="#563d7c">
 
@@ -41,7 +44,7 @@
         }
     </style>
     <!-- Custom styles for this template -->
-    <link href="starter-template.css" rel="stylesheet">
+<%--    <link href="starter-template.css" rel="stylesheet">--%>
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -82,10 +85,37 @@
 <main role="main" class="container">
 
     <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a
-            mostly barebones HTML document.</p>
+        <h1>All books from the library</h1>
+
+
+        <table class="table">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Category</th>
+                <th scope="col">Release date</th>
+                <th scope="col">Summary</th>
+                <th scope="col">Pages</th>
+                <th scope="col">ISBN</th>
+                <th scope="col">Borrowed</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach var="book" items="${requestScope.books}" varStatus="loop">
+                <tr>
+                    <th scope="row">${loop.index + 1}</th>
+                    <td>${book.title}</td>
+                    <td>${book.author}</td>
+                    <td>${book.category}</td>
+                </tr>
+            </c:forEach>
+            </tr>
+            </tbody>
+        </table>
     </div>
+
 
 </main><!-- /.container -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
