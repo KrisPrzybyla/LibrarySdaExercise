@@ -23,8 +23,26 @@ public abstract class GenericRepository<T, K> {
         transaction.commit();
     }
 
+    public T find(K id) {
+        return entityManager.find(entityClass, id);
+    }
+
     public List<T> findAll() {
         return entityManager.createQuery("select b from " + entityClass.getSimpleName() + " b", entityClass)
                 .getResultList();
+    }
+
+    public T update(T entity) {
+        transaction.begin();
+        entityManager.merge(entity);
+        transaction.commit();
+        return entity;
+    }
+
+    public void delete(K id) {
+        transaction.begin();
+        T read = find(id);
+        entityManager .remove(read);
+        transaction.commit();
     }
 }

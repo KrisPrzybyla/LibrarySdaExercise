@@ -6,16 +6,6 @@
         <welcome-file>HomeServlet</welcome-file>
     </welcome-file-list>
 
-    <servlet>
-        <servlet-name>HomeServlet</servlet-name>
-        <servlet-class>dev.kprzybyla.servlets.HomeServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>HomeServlet</servlet-name>
-        <url-pattern>/HomeServlet</url-pattern>
-    </servlet-mapping>
-
     <jsp-config>
         <jsp-property-group>
             <url-pattern>*.jsp</url-pattern>

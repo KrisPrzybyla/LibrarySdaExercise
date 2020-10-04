@@ -67,7 +67,7 @@ public class Book implements Serializable {
                 ", releaseDate=" + releaseDate +
                 ", summary='" + summary + '\'' +
                 ", title='" + title + '\'' +
-                ", author=" + author +
+                ", author=" + author.getFirstName() + " " + author.getLastName() +
                 '}';
     }
 }
