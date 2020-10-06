@@ -52,7 +52,7 @@
     <div class="starter-template">
         <h1>All books from the library</h1>
 
-        <form action="EditBook" method="get">
+        <form action="BookOperations" method="get">
             <table class="table">
                 <thead class="thead-light">
                 <tr>
@@ -64,7 +64,7 @@
                     <th scope="col">Summary</th>
                     <th scope="col">Pages</th>
                     <th scope="col">ISBN</th>
-<%--                    <th scope="col">Borrowed</th>--%>
+                    <%--                    <th scope="col">Borrowed</th>--%>
                     <th scope="col">Select</th>
                 </tr>
                 </thead>
@@ -79,17 +79,17 @@
                         <td>${book.summary}</td>
                         <td>${book.pages}</td>
                         <td>${book.isbn}</td>
-<%--                        <td>${book.borrow}</td>--%>
+                            <%--                        <td>${book.borrow}</td>--%>
                         <td>
-                            <label for="radio1"></label><input type="radio" name="bookId" id="radio1"
-                                                               value=${book.bookId}/>
+                            <label for="radio"></label><input type="radio" name="bookId" id="radio"
+                                                               value=${book.bookId}>
                         </td>
                     </tr>
                 </c:forEach>
                 </tbody>
             </table>
-<%--            <button type="submit" class="btn btn-success" name="action" value="add">Add</button>--%>
-            <a class="btn btn-success" href="/AddBook" role="button">Add</a>
+            <%--            <button type="submit" class="btn btn-success" name="action" value="add">Add</button>--%>
+            <a class="btn btn-success" href="${pageContext.request.contextPath}/AddBook" role="button">Add</a>
             <button type="submit" class="btn btn-warning" name="action" value="edit">Edit</button>
             <button type="submit" class="btn btn-danger" name="action" value="remove">Remove</button>
             <button type="submit" class="btn btn-primary" name="action" value="borrow">Borrow</button>

@@ -21,7 +21,7 @@ public class AddBook extends HttpServlet {
         AuthorRepository authorRepository = new AuthorRepository();
         List<Author> authorList = authorRepository.findAll();
         if (authorList != null) {
-            for (Author  author: authorList) {
+            for (Author author : authorList) {
                 System.out.println(author.toString());
             }
         }
@@ -48,6 +48,6 @@ public class AddBook extends HttpServlet {
 
         bookRepository.add(book);
 
-        response.sendRedirect("HomeServlet");
+        request.getRequestDispatcher("HomeServlet").forward(request, response);
     }
 }

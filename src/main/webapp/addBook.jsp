@@ -12,7 +12,7 @@
 
 <main role="main" class="container">
     <div class="starter-template">
-        <form class="form-group needs-validation" role="form" actio="AddBook" method="post">
+        <form class="form-group needs-validation" role="form" action="AddBook" method="post">
             <div class="form-group">
                 <label for="title">Title</label>
                 <input type="text" class="form-control" id="title" placeholder="Book title" name="title" required>

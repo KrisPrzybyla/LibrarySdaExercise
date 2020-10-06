@@ -18,12 +18,11 @@ public class HomeServlet extends HttpServlet {
         PrintWriter writer = response.getWriter();
 
         BookRepository bookRepository = new BookRepository();
-//        AuthorRepository authorRepository = new AuthorRepository();
 
         List<Book> bookList = bookRepository.findAll();
 
         if (bookList != null) {
-            for (Book  book: bookList) {
+            for (Book book : bookList) {
                 System.out.println(book.toString());
             }
         }
